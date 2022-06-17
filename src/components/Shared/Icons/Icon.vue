@@ -5,7 +5,7 @@
     :height="iconSize"
     xmlns="http://www.w3.org/2000/svg"
     :fill="iconColor"
-    :stroke="iconColor"
+    :stroke="strokeColor"
   >
     <use :xlink:href="icon" />
   </svg>
@@ -34,6 +34,11 @@ export default {
     iconColor: {
       type: String,
       default: "#fff",
+    },
+
+    strokeColor: {
+      type: String,
+      default: "",
     },
   },
 

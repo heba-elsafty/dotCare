@@ -1,0 +1,10 @@
+{
+  "message": "hello i18n !!",
+  "lang": {
+    "ar": "Arabic",
+    "en": "English"
+  },
+  "navigation": {
+    "product": "Product"
+  }
+}

@@ -14,14 +14,18 @@
         variant="link"
         class="position-absolute top-0 end-0"
       >
-        <Icon :iconName="icon" :iconColor="'#0357a8'" />
+        <Icon
+          :iconName="icon"
+          :iconColor="iconColor"
+          :strokeColor="iconColor"
+        />
       </b-button>
     </div>
   </div>
 </template>
 
 <script>
-import Icon from "../Shared/Icons/Icon.vue";
+import Icon from "../Icons/Icon";
 
 export default {
   components: { Icon },
@@ -55,6 +59,11 @@ export default {
     icon: {
       type: String,
       default: null,
+    },
+
+    iconColor: {
+      type: String,
+      default: "#0357a8",
     },
   },
 

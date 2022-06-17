@@ -1,0 +1,29 @@
+@import "../../assets/stylesheet/helpers/_custom-variables";
+
+.navigation {
+  &.navbar {
+    .navbar-toggler {
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .navbar-collapse {
+      &.show {
+        .navbar-nav {
+          position: absolute;
+          background: $light-blue;
+          left: 0;
+          right: 0;
+          width: 98.2vw;
+          top: 3.5rem;
+          border-radius: $border-radius;
+          z-index: 10;
+
+          flex-direction: row;
+          padding: 0.5rem 2.5rem;
+        }
+      }
+    }
+  }
+}
