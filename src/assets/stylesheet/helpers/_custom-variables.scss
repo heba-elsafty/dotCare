@@ -60,3 +60,10 @@ $font-path: "@/../../fonts";
 
 $font-size-base: 1rem; // 16px
 $base-font-family: "Cairo", sans-serif;
+
+/* ===============================
+       Style anchor elements
+ =============================== */
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
+$link-hover-color: $secondary;
