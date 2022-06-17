@@ -1,0 +1,20 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small {
+  @extend .mb-0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend .fw-bold;
+  line-height: 1.8;
+}

@@ -1,0 +1,62 @@
+/* ===============================
+       gray color Variables
+ =============================== */
+$gray-100: #fafafa !default;
+$gray-200: #eee !default;
+$gray-300: #cfcfcf !default;
+$gray-500: #515151 !default;
+$gray-900: #333;
+$black: #000;
+$white: #fff;
+
+/* ===============================
+       map gray color
+ =============================== */
+$grays: (
+  "100": $gray-100,
+  "500": $gray-100,
+  "900": $gray-900,
+);
+
+/* ===============================
+        Color Variables
+ =============================== */
+$primary: #0357a8;
+$secondary: #11e4ea;
+$info: #95b9da;
+$light: #eff7ff;
+$warning: #f69c5d;
+$danger: #e30613;
+$success: #36b600;
+
+/* ===============================
+        map theme color
+ =============================== */
+$theme-colors: (
+  primary: $primary,
+  secondary: $secondary,
+  warning: $warning,
+  danger: $danger,
+  success: $success,
+  gray: $gray-500,
+  white: $white,
+  dark: $black,
+  light: $light,
+  gray-200: $gray-200,
+  gray-300: $gray-300,
+  info: $info,
+);
+
+/* ===============================
+        Body color Variables
+ =============================== */
+$body-color: $gray-900;
+$body-bg: $light !default;
+
+/* ===============================
+         Fonts Variables
+ =============================== */
+$font-path: "@/../../fonts";
+
+$font-size-base: 1rem; // 16px
+$base-font-family: "Cairo", sans-serif;
