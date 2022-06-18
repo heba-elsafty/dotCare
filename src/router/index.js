@@ -6,16 +6,33 @@ Vue.use(VueRouter)
 
 const routes = [{
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'home',
+    component: Home,
+    meta: {
+      breadCrumb: [{
+        name: "home",
+        link: "/"
+      }]
+    }
   },
   {
     path: '/product',
-    name: 'Product',
+    name: 'product',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import('../Pages/Product/Index.vue')
+    component: () => import('../Pages/Product/Index.vue'),
+    meta: {
+      breadCrumb: [{
+          name: "home",
+          link: "/"
+        },
+        {
+          name: "product",
+          link: "/product"
+        }
+      ]
+    }
   },
 ]
 

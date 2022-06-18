@@ -6,5 +6,9 @@
   },
   "navigation": {
     "product": "المنتج"
+  },
+  "breadCrumb": {
+    "home": "الصفحة الرئيسية",
+    "product": "المنتج"
   }
 }

@@ -1,0 +1,19 @@
+@import "../../../assets/stylesheet/helpers/_custom-variables";
+
+.breadcrumb {
+  background-color: $primary;
+  border-radius: $border-radius;
+  &__item {
+    color: $white;
+
+    &::before {
+      content: ">";
+      padding-right: 0.3rem;
+      padding-left: 0.3rem;
+    }
+
+    &--active {
+      opacity: 0.7;
+    }
+  }
+}

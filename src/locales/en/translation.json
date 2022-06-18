@@ -6,5 +6,9 @@
   },
   "navigation": {
     "product": "Product"
+  },
+  "breadCrumb": {
+    "home": "Home",
+    "product": "Product"
   }
 }
