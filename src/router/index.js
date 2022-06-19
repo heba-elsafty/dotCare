@@ -9,6 +9,7 @@ const routes = [{
     name: 'home',
     component: Home,
     meta: {
+      title: "home",
       breadCrumb: [{
         name: "home",
         link: "/"
@@ -23,6 +24,7 @@ const routes = [{
     // which is lazy-loaded when the route is visited.
     component: () => import('../Pages/Product/Index.vue'),
     meta: {
+      title: "product",
       breadCrumb: [{
           name: "home",
           link: "/"
@@ -34,7 +36,9 @@ const routes = [{
       ]
     }
   },
-]
+];
+
+
 
 const router = new VueRouter({
   mode: 'history',

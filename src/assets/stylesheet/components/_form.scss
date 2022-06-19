@@ -1,0 +1,23 @@
+/* ===============================
+        override Checkbox
+ =============================== */
+
+.custom-checkbox,
+.custom-radio {
+  @extend .form-check;
+
+  .custom-control-input {
+    @extend .form-check-input;
+  }
+
+  .custom-control-label {
+    @extend .form-check-label;
+  }
+}
+
+.form-check-inline {
+  .custom-radio {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+}

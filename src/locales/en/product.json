@@ -1,0 +1,16 @@
+{
+  "product": "Product",
+  "basicInformation": "Basic Information",
+  "filter": {
+    "wareHouse":  "Warehouse",
+    "selectWareHouse": "Select warehouse",
+    "type": "Type",
+    "selectType": "Select UOM type",
+    "showZeroBalance": "Show Zero Balance",
+    "productClassification": "Product Classification",
+    "allProduct": "All product",
+    "specificProduct": "Specific product",
+    "selectProducts": "Select products",
+    "search": "Search"
+  }
+}

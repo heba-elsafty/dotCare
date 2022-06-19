@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-primary text-white mt-3">
+  <footer class="bg-primary text-white mt-3 rounded text-center py-1">
      <p>{{copyRight}}</p>
   </footer>
 </template>

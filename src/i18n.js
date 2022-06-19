@@ -6,20 +6,24 @@ Vue.use(VueI18n)
 // EN
 import translationEN from "./locales/en/translation.json";
 import homeEN from "./locales/en/homepage.json";
+import productEN from "./locales/en/product.json";
 
 // AR
 import translationAR from "./locales/ar/translation.json";
 import homeAR from "./locales/ar/homepage.json";
+import productAr from "./locales/ar/product.json";
 
 
 const messages = {
   en: {
     translation: translationEN,
     home: homeEN,
+    product: productEN,
   },
   ar: {
     translation: translationAR,
     home: homeAR,
+    product: productAr,
   },
 };
 

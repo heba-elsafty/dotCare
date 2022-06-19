@@ -4,6 +4,7 @@
 $gray-100: #fafafa !default;
 $gray-200: #eee !default;
 $gray-300: #cfcfcf !default;
+$gray-400: #bbbfc2 !default;
 $gray-500: #515151 !default;
 $gray-900: #333;
 $black: #000;
@@ -14,6 +15,7 @@ $white: #fff;
  =============================== */
 $grays: (
   "100": $gray-100,
+  "400": $gray-400,
   "500": $gray-100,
   "900": $gray-900,
 );
@@ -22,13 +24,14 @@ $grays: (
         Color Variables
  =============================== */
 $primary: #0357a8;
+$dark-blue: #0c3c6b;
 $secondary: #11e4ea;
 $info: #95b9da;
 $light: #eff7ff;
 $light-blue: #ecfbff;
 $warning: #f69c5d;
 $danger: #e30613;
-$success: #36b600;
+$success: #4ed9b4;
 
 /* ===============================
         map theme color
@@ -45,8 +48,10 @@ $theme-colors: (
   light: $light,
   gray-200: $gray-200,
   gray-300: $gray-300,
+  gray-400: $gray-400,
   info: $info,
   light-blue: $light-blue,
+  dark-blue: $dark-blue,
 );
 
 /* ===============================
@@ -95,3 +100,8 @@ $breadcrumb-padding-x: 1rem;
 $breadcrumb-border-radius: $border-radius;
 
 $navbar-light-color: $primary;
+
+/* ===============================
+         Button
+   =============================== */
+$btn-disabled-opacity: 0.3;

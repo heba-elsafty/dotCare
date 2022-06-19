@@ -1,0 +1,74 @@
+{
+  "data": [{
+      "id": 1,
+      "name": "warehouse 1",
+      "types": [{
+          "id": 11,
+          "name": "type A",
+          "products": [{
+              "id": 333,
+              "name": "product one"
+            },
+
+            {
+              "id": 32432,
+              "name": "product two"
+            },
+
+            {
+              "id": 434,
+              "name": "product three"
+            },
+            {
+              "id": 434,
+              "name": "product four"
+            }
+
+          ]
+        },
+        {
+          "id": 161,
+          "name": "type B",
+          "products": [{
+              "id": 333,
+              "name": "product jj"
+            },
+
+            {
+              "id": 32432,
+              "name": "product ll"
+            },
+
+            {
+              "id": 434,
+              "name": "product er"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "warehouse 2",
+      "types": [{
+        "id": 114,
+        "name": "type E",
+        "products": [{
+            "id": 333,
+            "name": "product 44"
+          },
+
+          {
+            "id": 32432,
+            "name": "product 00"
+          },
+
+          {
+            "id": 434,
+            "name": "product 666"
+          }
+        ]
+      }]
+    }
+  ]
+}

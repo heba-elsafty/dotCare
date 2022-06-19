@@ -1,0 +1,16 @@
+{
+  "product": "المنتج",
+  "basicInformation": "معلومات اساسية",
+  "filter": {
+    "wareHouse":  "مستودع",
+    "selectWareHouse": "اختر المستودع",
+    "type": "النوع",
+    "selectType": "اختر UOM النوع",
+    "showZeroBalance": "إظهار الرصيد الصفري",
+    "productClassification": "تصفية المنتجات",
+    "allProduct": "كل المنتجات",
+    "specificProduct": "منتج معين",
+    "selectProducts": "اختر المنتجات",
+    "search": "بحث"
+  }
+}

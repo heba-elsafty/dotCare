@@ -74,11 +74,12 @@ export default {
   },
 
   watch: {
-    val(value) {
-      this.$emit("input", value);
+    val(newValue) {
+      this.$emit("input", newValue);
     },
-    value(value) {
-      this.val = value;
+
+    value(newValue) {
+      this.val = newValue;
     },
   },
 };

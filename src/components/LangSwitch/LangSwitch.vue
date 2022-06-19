@@ -27,7 +27,6 @@ export default {
 
   methods: {
     changeLanguage(lng) {
-      console.log(lng);
       const direction = lng === "ar" ? "rtl" : "ltr";
       const htmlTag = document.querySelector("html");
 
