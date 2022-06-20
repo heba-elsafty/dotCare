@@ -6,9 +6,7 @@
           <th v-for="header in headers" :key="header.field">
             {{ header.label }}
           </th>
-          <th v-if="showZeroBalance && product.balance <= 0">
-            {{ $t("product.table.headers.balance") }}
-          </th>
+
           <th>
             {{ $t("product.table.headers.actions") }}
           </th>
@@ -35,16 +33,11 @@
           </td>
           <td class="w-md-25 border-0">{{ product.ratio }}</td>
           <td class="w-md-25 border-0">{{ product.date | moment("LL") }}</td>
-          <td
-            v-if="showZeroBalance && product.balance <= 0"
-            class="w-md-25 border-0 text-danger"
-          >
-            {{ product.balance }}
-          </td>
+
           <td class="border-0">
             <b-button
               variant="link"
-              class="p-0 delete"
+              class="p-0 delete w-md-25"
               @click="$emit('deleteProduct')"
             >
               <Icon iconName="delete" iconColor="#8c8b8b" :iconSize="25" />
@@ -68,11 +61,7 @@ export default {
     product: {
       type: Object,
       default: null,
-    },
-    showZeroBalance: {
-      type: Boolean,
-      default: false,
-    },
+    }
   },
   computed: {
     headers() {

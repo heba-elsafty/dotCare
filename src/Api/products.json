@@ -16,6 +16,22 @@
       },
       "warehouse_id": 1
     },
+      {
+      "id": 166,
+      "name": "Chocolate 2",
+      "quantity": 0,
+      "uom_name": "Esraa UOM service",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "balance": 10,
+      "ratio": 1,
+      "code": 2160,
+      "date": "2021-11-11 13:23:44",
+      "type": {
+        "id": 1,
+        "name": "type A"
+      },
+      "warehouse_id": 1
+    },
     {
       "id": 222,
       "name": "Milk",

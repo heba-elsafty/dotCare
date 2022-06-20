@@ -17,10 +17,7 @@
       <h5 class="text-dark-blue border-bottom mb-3">
         {{ $t("product.productDetails") }}
       </h5>
-      <product-details-table
-        :tableItems="tableItems"
-        :showZeroBalance="filteredItem.showZeroBalance"
-      />
+      <product-details-table :tableItems="tableItems" />
     </div>
 
     <Footer />
@@ -88,6 +85,12 @@ export default {
           .filter((product) => product.type.id === this.filteredItem.type);
       } else {
         this.tableItems = this.filteredItem.products;
+      }
+
+      if (!this.filteredItem.showZeroBalance) {
+        this.tableItems = this.tableItems.filter(
+          (product) => product.quantity > 0
+        );
       }
     },
   },

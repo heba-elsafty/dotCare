@@ -54,7 +54,6 @@
           <td class="border-0" colspan="4">
             <ProductInformation
               :product="product"
-              :showZeroBalance="showZeroBalance"
               @deleteProduct="deleteProduct(index)"
             />
           </td>
@@ -76,11 +75,7 @@ export default {
     tableItems: {
       type: Array,
       required: true,
-    },
-    showZeroBalance: {
-      type: Boolean,
-      default: false,
-    },
+    }
   },
 
   data() {
