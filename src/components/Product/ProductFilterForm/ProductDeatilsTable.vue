@@ -12,7 +12,7 @@
 
       <tbody class="border-top-0 text-center" v-if="tableItems.length === 0">
         <tr>
-          <td colspan="4" class="py-5">
+          <td colspan="4" class="py-5 border-0">
             <b-img
               :src="require('../../../assets/images/noDataFoundGreen.svg')"
             />

@@ -5,6 +5,10 @@
 .custom-checkbox,
 .custom-radio {
   @extend .form-check;
+  #ar & {
+    padding-left: 0;
+    padding-right: 1.5em;
+  }
 
   .custom-control-input {
     @extend .form-check-input;
@@ -19,5 +23,9 @@
   .custom-radio {
     display: inline-block;
     margin-right: 1rem;
+    #ar & {
+      margin-right: 0;
+      margin-left: 1rem;
+    }
   }
 }
