@@ -1,0 +1,26 @@
+{
+  "warehouses": [
+    {
+      "id": 1,
+      "name": "warehouse 1",
+      "types": [{
+          "id": 1,
+          "name": "type A"
+        },
+        {
+          "id": 2,
+          "name": "type B"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "warehouse 2",
+      "types": [{
+        "id": 5,
+        "name": "type E"
+      }
+    ]
+    }
+  ]
+}

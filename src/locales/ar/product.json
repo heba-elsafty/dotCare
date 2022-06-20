@@ -3,7 +3,7 @@
   "basicInformation": "معلومات اساسية",
   "filter": {
     "wareHouse":  "مستودع",
-    "selectWareHouse": "اختر المستودع",
+    "selectWareHouse": "اختر مستودع",
     "type": "النوع",
     "selectType": "اختر UOM النوع",
     "showZeroBalance": "إظهار الرصيد الصفري",
@@ -12,5 +12,15 @@
     "specificProduct": "منتج معين",
     "selectProducts": "اختر المنتجات",
     "search": "بحث"
+  },
+  "productDetails": "تفاصيل المنتج",
+  "table": {
+    "headers":{
+      "onHand": "رقم المنتج",
+      "filterByOnHand": "ابحث برقم المنتج",
+      "type": "النوع",
+      "filterByType": "ابحث بنوع المنتج",
+      "filterByProduct": "ابحث بإسم المنتج"
+    }
   }
 }

@@ -1,84 +1,89 @@
 <template>
-  <b-form>
-    <b-row class="align-items-center">
-      <b-col>
-        <Select
-          id="warehouse_root"
-          ref="warehouse"
-          required
-          :label="textTranslate('wareHouse')"
-          :firstOptionPlaceholder="textTranslate('selectWareHouse')"
-          :options="warehouses.roots"
-          v-model="warehouse.root"
-          valueField="id"
-          textField="name"
-          @change="onWarehouseRootSelect"
-        />
-      </b-col>
+  <div>
+    <h5 class="text-dark-blue border-bottom mb-3">
+      {{ $t("product.basicInformation") }}
+    </h5>
 
-      <b-col>
-        <Select
-          required
-          :label="textTranslate('type')"
-          :firstOptionPlaceholder="textTranslate('selectType')"
-          :options="warehouses.types"
-          v-model="warehouse.type"
-          valueField="id"
-          textField="name"
-          :disabled="!warehouse.root"
-          @change="onWarehouseTypeSelect"
-        />
-      </b-col>
+    <b-form>
+      <b-row class="align-items-center">
+        <b-col>
+          <Select
+            id="warehouse_root"
+            ref="warehouse"
+            required
+            :label="textTranslate('wareHouse')"
+            :firstOptionPlaceholder="textTranslate('selectWareHouse')"
+            :options="defaultItem.warehouses"
+            v-model="filteredItem.warehouse"
+            valueField="id"
+            textField="name"
+            @change="onWarehouseSelect"
+          />
+        </b-col>
 
-      <b-col>
-        <checkbox
-          :label="textTranslate('showZeroBalance')"
-          name="show_zero_balance"
-          v-model="warehouse.showBalance"
-          :uncheckedValue="!warehouse.showBalance"
-          class="mt-4 pt-1"
-        />
-      </b-col>
-    </b-row>
+        <b-col>
+          <Select
+            required
+            :label="textTranslate('type')"
+            :firstOptionPlaceholder="textTranslate('selectType')"
+            :options="defaultItem.types"
+            v-model="filteredItem.type"
+            valueField="id"
+            textField="name"
+            :disabled="!filteredItem.warehouse"
+            @change="onTypeSelect"
+          />
+        </b-col>
 
-    <b-row class="mt-4">
-      <b-col md="4">
-        <radio-buttons
-          id="product_classification"
-          :disabled="
-            !warehouse.root || !warehouse.type || !warehouse.showBalance
-          "
-          :label="textTranslate('productClassification')"
-          :options="productClassification"
-          v-model="warehouse.classification"
-        />
-      </b-col>
+        <b-col>
+          <checkbox
+            :label="textTranslate('showZeroBalance')"
+            name="show_zero_balance"
+            v-model="filteredItem.showBalance"
+            :uncheckedValue="!filteredItem.showBalance"
+            class="mt-4 pt-1"
+          />
+        </b-col>
+      </b-row>
 
-      <b-col>
-        <multi-select
-          v-if="warehouse.classification === 'specific'"
-          v-model="warehouse.product"
-          id="product"
-          :options="warehouses.products"
-          :placeholder="textTranslate('selectProducts')"
-          :label="$t('product.product')"
-          optionLabel="name"
-          trackBy="id"
-          required
-        />
-      </b-col>
-    </b-row>
+      <b-row class="mt-4">
+        <b-col md="4">
+          <radio-buttons
+            id="product_classification"
+            :disabled="!filteredItem.warehouse || !filteredItem.type"
+            :label="textTranslate('productClassification')"
+            :options="productClassification"
+            v-model="filteredItem.classification"
+          />
+        </b-col>
 
-    <div class="text-end">
-      <b-button
-        variant="secondary"
-        class="text-white px-5 my-3"
-        :disabled="!validatedForm"
-      >
-        {{ textTranslate("search") }}
-      </b-button>
-    </div>
-  </b-form>
+        <b-col>
+          <multi-select
+            v-if="filteredItem.classification === 'specific'"
+            v-model="filteredItem.products"
+            id="product"
+            :options="this.selectedProducts"
+            :placeholder="textTranslate('selectProducts')"
+            :label="$t('product.product')"
+            optionLabel="name"
+            trackBy="id"
+            required
+          />
+        </b-col>
+      </b-row>
+
+      <div class="text-end">
+        <b-button
+          variant="secondary"
+          class="text-white px-5 my-3"
+          :disabled="!validatedForm"
+          @click="onSubmit"
+        >
+          {{ textTranslate("search") }}
+        </b-button>
+      </div>
+    </b-form>
+  </div>
 </template>
 
 <script>
@@ -86,37 +91,21 @@ import Select from "../../Shared/Form/Select";
 import Checkbox from "../../Shared/Form/Checkbox";
 import RadioButtons from "../../Shared/Form/RadioButtons.vue";
 
-// Fake Api
-import dataApi from "../../../Api/product.json";
 import MultiSelect from "../../Shared/Form/MultiSelect.vue";
 
 export default {
   components: { Select, Checkbox, RadioButtons, MultiSelect },
 
-  data() {
-    return {
-      warehouse: {
-        root: null,
-        type: null,
-        product: [],
-        showBalance: false,
-        classification: null,
-      },
-
-      warehouses: {
-        roots: [],
-        types: [],
-        products: [],
-      },
-
-      selectedIndexRoot: 0,
-      selectedIndexType: 0,
-    };
+  props: {
+    defaultItem: { type: Object, required: true },
+    filteredItem: { type: Object, required: true },
   },
 
-  created() {
-    const { data } = dataApi;
-    this.warehouses.roots = data;
+  data() {
+    return {
+      selectedWarehouseIndex: 0,
+      selectedProducts: [],
+    };
   },
 
   computed: {
@@ -131,37 +120,41 @@ export default {
       ];
     },
 
-    checkClassificationvalidated() {
-      return this.warehouse.showBalance &&
-        this.warehouse.classification === "specific"
-        ? this.warehouse.product.length > 0
-        : true;
-    },
+    // checkClassificationvalidated() {
+    //   return this.filteredItem.showBalance &&
+    //     this.filteredItem.classification === "specific"
+    //     ? this.filteredItem.product.length > 0
+    //     : true;
+    // },
 
     validatedForm() {
       return (
-        this.warehouse.root &&
-        this.warehouse.type &&
-        this.checkClassificationvalidated
+        this.filteredItem.warehouse &&
+        this.filteredItem.type &&
+        this.filteredItem.classification
       );
     },
   },
 
   methods: {
-    onWarehouseRootSelect() {
-      this.selectedIndexRoot = this.warehouses.roots.findIndex(
-        (w) => w.id === this.warehouse.root
+    onWarehouseSelect() {
+      this.selectedWarehouseIndex = this.defaultItem.warehouses.findIndex(
+        (w) => w.id === this.filteredItem.warehouse
       );
-      this.warehouses.types =
-        this.warehouses.roots[this.selectedIndexRoot].types;
+      this.defaultItem.types =
+        this.defaultItem.warehouses[this.selectedWarehouseIndex].types;
     },
 
-    onWarehouseTypeSelect() {
-      this.selectedIndexType = this.warehouses.types.findIndex(
-        (t) => t.id === this.warehouse.type
-      );
-      this.warehouses.products =
-        this.warehouses.types[this.selectedIndexType].products;
+    onTypeSelect() {
+      this.selectedProducts = this.defaultItem.products
+        .filter(
+          (product) => product.warehouse_id === this.filteredItem.warehouse
+        )
+        .filter((product) => product.type.id === this.filteredItem.type);
+    },
+
+    onSubmit() {
+      this.$emit("save");
     },
   },
 };

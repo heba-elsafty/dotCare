@@ -12,5 +12,15 @@
     "specificProduct": "Specific product",
     "selectProducts": "Select products",
     "search": "Search"
+  },
+  "productDetails": "Product details",
+  "table": {
+    "headers":{
+      "onHand": "On hand",
+      "filterByOnHand": "Filter by On hand",
+      "type": "Type",
+      "filterByType": "Filter by Type",
+      "filterByProduct": "Filter by Product"
+    }
   }
 }

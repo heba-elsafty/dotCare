@@ -1,0 +1,67 @@
+{
+  "products": [{
+      "id": 1,
+      "name": "Chocolate",
+      "quantity": 500,
+      "uom_name": "Esraa UOM service",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "balance": 10,
+      "ratio": 1,
+      "code": 210,
+      "date": "2021-11-11 13:23:44",
+      "type": {
+        "id": 1,
+        "name": "type A"
+      },
+      "warehouse_id": 1
+    },
+    {
+      "id": 222,
+      "name": "Milk",
+      "quantity": 5050,
+      "uom_name": "jjj UOM service",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "balance": 100,
+      "ratio": 600,
+      "code": 2170,
+      "date": "2021-11-11 13:23:44",
+      "type": {
+        "id": 1,
+        "name": "type A"
+      },
+      "warehouse_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Cookies",
+      "quantity": 800,
+      "uom_name": "Aly UOM service",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "ratio": 1,
+      "balance": 20,
+      "code": 211,
+      "date": "2022-11-11 13:23:44",
+      "type": {
+        "id": 2,
+        "name": "type B"
+      },
+      "warehouse_id": 1
+    },
+    {
+      "id": 3,
+      "name": "product 4",
+      "quantity": 890,
+      "uom_name": "Aly UOM service",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "ratio": 5,
+      "balance": 0,
+      "code": 2161,
+      "date": "2022-11-11 13:23:44",
+      "type": {
+        "id": 5,
+        "name": "type E"
+      },
+      "warehouse_id": 2
+    }
+  ]
+}
