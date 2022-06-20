@@ -23,7 +23,7 @@
 
       <tbody
         class="border-top-0 align-middle"
-        v-for="product in tableItems"
+        v-for="(product, index) in tableItems"
         :key="product.id"
       >
         <tr>
@@ -55,6 +55,7 @@
             <ProductInformation
               :product="product"
               :showZeroBalance="showZeroBalance"
+              @deleteProduct="deleteProduct(index)"
             />
           </td>
         </tr>
@@ -115,6 +116,10 @@ export default {
       } else {
         this.opened.push(id);
       }
+    },
+
+    deleteProduct(index) {
+      console.log(this.tableItems.splice(index, 1));
     },
   },
 };

@@ -9,6 +9,9 @@
           <th v-if="showZeroBalance && product.balance <= 0">
             {{ $t("product.table.headers.balance") }}
           </th>
+          <th>
+            {{ $t("product.table.headers.actions") }}
+          </th>
         </tr>
       </thead>
       <tbody class="border-top-0">
@@ -38,6 +41,15 @@
           >
             {{ product.balance }}
           </td>
+          <td class="border-0">
+            <b-button
+              variant="link"
+              class="p-0 delete"
+              @click="$emit('deleteProduct')"
+            >
+              <Icon iconName="delete" iconColor="#8c8b8b" :iconSize="25" />
+            </b-button>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -46,9 +58,11 @@
 
 <script>
 import helpers from "../../../Mixins/helpers";
+import Icon from "../../Shared/Icons/Icon.vue";
 
 export default {
   mixins: [helpers],
+  components: { Icon },
 
   props: {
     product: {
@@ -88,3 +102,13 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.delete {
+  &:hover {
+    svg {
+      fill: #e30613;
+    }
+  }
+}
+</style>

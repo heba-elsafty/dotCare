@@ -26,7 +26,8 @@
       "description": "الوصف",
       "ratio": "نسبة",
       "createdDate": "تاريخ الانشاء",
-      "balance": "الرصيد"
+      "balance": "الرصيد",
+      "actions": ""
     }
   }
 }

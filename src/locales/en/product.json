@@ -26,7 +26,8 @@
       "description": "Description",
       "ratio": "Ratio",
       "createdDate": "Created date",
-      "balance": "Balance"
+      "balance": "Balance",
+      "actions": "Actions"
     }
   }
 }
