@@ -1,6 +1,6 @@
 <template>
-  <div class="table-responsive rounded-3 shadow-sm">
-    <table class="table border">
+  <div class="table-responsive border rounded-3 shadow-sm">
+    <table class="table">
       <thead class="table-light">
         <tr>
           <th scope="col"></th>
@@ -51,8 +51,11 @@
           <td class="border-0">{{ product.type.name }}</td>
         </tr>
         <tr v-if="opened.includes(product.id)" :key="product.id">
-          <td colspan="4">
-            <ProductInformation :product="product" />
+          <td class="border-0" colspan="4">
+            <ProductInformation
+              :product="product"
+              :showZeroBalance="showZeroBalance"
+            />
           </td>
         </tr>
       </tbody>
@@ -73,9 +76,9 @@ export default {
       type: Array,
       required: true,
     },
-    typeId: {
-      type: [String, Number],
-      default: null,
+    showZeroBalance: {
+      type: Boolean,
+      default: false,
     },
   },
 

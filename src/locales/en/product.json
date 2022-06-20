@@ -25,7 +25,8 @@
       "UomName": "UOM Name",
       "description": "Description",
       "ratio": "Ratio",
-      "createdDate": "Created date"
+      "createdDate": "Created date",
+      "balance": "Balance"
     }
   }
 }

@@ -39,8 +39,8 @@
           <checkbox
             :label="textTranslate('showZeroBalance')"
             name="show_zero_balance"
-            v-model="filteredItem.showBalance"
-            :uncheckedValue="!filteredItem.showBalance"
+            v-model="filteredItem.showZeroBalance"
+            :uncheckedValue="!filteredItem.showZeroBalance"
             class="mt-4 pt-1"
           />
         </b-col>

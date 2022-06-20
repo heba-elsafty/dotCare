@@ -17,7 +17,10 @@
       <h5 class="text-dark-blue border-bottom mb-3">
         {{ $t("product.productDetails") }}
       </h5>
-      <product-table :tableItems="tableItems" :typeId="filteredItem.type" />
+      <product-details-table
+        :tableItems="tableItems"
+        :showZeroBalance="filteredItem.showZeroBalance"
+      />
     </div>
 
     <Footer />
@@ -29,7 +32,7 @@ import Footer from "../../components/Layout/Footer.vue";
 import Navigation from "../../components/Navigation/Navigation.vue";
 import ProductFilterForm from "../../components/Product/ProductFilterForm/ProductFilterForm.vue";
 import BreadCrumb from "../../components/Shared/BreadCrumb/BreadCrumb.vue";
-import ProductTable from "../../components/Product/ProductFilterForm/ProductDeatilsTable.vue";
+import ProductDetailsTable from "../../components/Product/ProductFilterForm/ProductDeatilsTable.vue";
 
 // API
 import WarehousesAPI from "../../Api/warehouses.json";
@@ -41,7 +44,7 @@ export default {
     BreadCrumb,
     Footer,
     ProductFilterForm,
-    ProductTable,
+    ProductDetailsTable,
   },
 
   data() {
@@ -51,7 +54,7 @@ export default {
         warehouse: null,
         type: null,
         products: [],
-        showBalance: false,
+        showZeroBalance: false,
         classification: null,
       },
 

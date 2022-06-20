@@ -1,18 +1,21 @@
 <template>
-  <div class="table-responsive rounded-3 shadow-sm">
-    <table class="table border">
+  <div class="table-responsive border rounded-3 shadow-sm">
+    <table class="table">
       <thead class="table-light">
         <tr>
           <th v-for="header in headers" :key="header.field">
             {{ header.label }}
           </th>
+          <th v-if="showZeroBalance && product.balance <= 0">
+            {{ $t("product.table.headers.balance") }}
+          </th>
         </tr>
       </thead>
       <tbody class="border-top-0">
         <tr>
-          <td class="w-md-10">{{ product.code }}</td>
-          <td class="w-md-25">{{ product.uom_name }}</td>
-          <td class="w-md-25">
+          <td class="w-md-10 border-0">{{ product.code }}</td>
+          <td class="w-md-25 border-0">{{ product.uom_name }}</td>
+          <td class="w-md-25 border-0">
             <span id="popover-target-1">
               {{ trimString(product.description, 30) }}
             </span>
@@ -27,8 +30,14 @@
               {{ product.description }}
             </b-popover>
           </td>
-          <td class="w-md-25">{{ product.ratio }}</td>
-          <td class="w-md-25">{{ product.date | moment("LL") }}</td>
+          <td class="w-md-25 border-0">{{ product.ratio }}</td>
+          <td class="w-md-25 border-0">{{ product.date | moment("LL") }}</td>
+          <td
+            v-if="showZeroBalance && product.balance <= 0"
+            class="w-md-25 border-0 text-danger"
+          >
+            {{ product.balance }}
+          </td>
         </tr>
       </tbody>
     </table>
@@ -45,6 +54,10 @@ export default {
     product: {
       type: Object,
       default: null,
+    },
+    showZeroBalance: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {

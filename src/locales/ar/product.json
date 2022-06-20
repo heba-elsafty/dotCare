@@ -25,7 +25,8 @@
       "UomName": "UOM اسم",
       "description": "الوصف",
       "ratio": "نسبة",
-      "createdDate": "تاريخ الانشاء"
+      "createdDate": "تاريخ الانشاء",
+      "balance": "الرصيد"
     }
   }
 }
