@@ -20,7 +20,12 @@
       "filterByOnHand": "ابحث برقم المنتج",
       "type": "النوع",
       "filterByType": "ابحث بنوع المنتج",
-      "filterByProduct": "ابحث بإسم المنتج"
+      "filterByProduct": "ابحث بإسم المنتج",
+      "code": "كود",
+      "UomName": "UOM اسم",
+      "description": "الوصف",
+      "ratio": "نسبة",
+      "createdDate": "تاريخ الانشاء"
     }
   }
 }

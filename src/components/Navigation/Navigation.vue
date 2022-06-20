@@ -12,7 +12,7 @@
 
     <b-collapse id="navbar-toggle-collapse" is-nav>
       <b-navbar-nav class="ml-auto">
-        <router-link to="/product">
+        <router-link to="/product" class="text-center">
           <b-img
             :src="require('../../assets/images/admin.svg')"
             width="30"

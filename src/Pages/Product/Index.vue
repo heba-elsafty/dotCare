@@ -7,7 +7,7 @@
 
     <h5>{{ title }}</h5>
 
-    <div class="bg-white py-2 px-5">
+    <div class="bg-white py-2 px-2 px-md-5">
       <product-filter-form
         @save="save"
         :defaultItem="defaultItem"
@@ -29,7 +29,7 @@ import Footer from "../../components/Layout/Footer.vue";
 import Navigation from "../../components/Navigation/Navigation.vue";
 import ProductFilterForm from "../../components/Product/ProductFilterForm/ProductFilterForm.vue";
 import BreadCrumb from "../../components/Shared/BreadCrumb/BreadCrumb.vue";
-import ProductTable from "../../components/Product/ProductFilterForm/ProductTable.vue";
+import ProductTable from "../../components/Product/ProductFilterForm/ProductDeatilsTable.vue";
 
 // API
 import WarehousesAPI from "../../Api/warehouses.json";
@@ -70,6 +70,7 @@ export default {
 
     const { warehouses } = WarehousesAPI;
     this.defaultItem.warehouses = warehouses;
+
     const { products } = ProductsAPI;
     this.defaultItem.products = products;
   },

@@ -13,7 +13,7 @@
       padding-left: 0.3rem;
     }
 
-    &--active {
+    &.router-link-exact-active {
       opacity: 1;
     }
   }

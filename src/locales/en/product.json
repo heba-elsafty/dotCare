@@ -20,7 +20,12 @@
       "filterByOnHand": "Filter by On hand",
       "type": "Type",
       "filterByType": "Filter by Type",
-      "filterByProduct": "Filter by Product"
+      "filterByProduct": "Filter by Product",
+      "code": "Code",
+      "UomName": "UOM Name",
+      "description": "Description",
+      "ratio": "Ratio",
+      "createdDate": "Created date"
     }
   }
 }

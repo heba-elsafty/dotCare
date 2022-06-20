@@ -6,7 +6,7 @@
 
     <b-form>
       <b-row class="align-items-center">
-        <b-col>
+        <b-col md="4">
           <Select
             id="warehouse_root"
             ref="warehouse"
@@ -21,7 +21,7 @@
           />
         </b-col>
 
-        <b-col>
+        <b-col md="4">
           <Select
             required
             :label="textTranslate('type')"
@@ -35,7 +35,7 @@
           />
         </b-col>
 
-        <b-col>
+        <b-col md="4">
           <checkbox
             :label="textTranslate('showZeroBalance')"
             name="show_zero_balance"
@@ -120,18 +120,18 @@ export default {
       ];
     },
 
-    // checkClassificationvalidated() {
-    //   return this.filteredItem.showBalance &&
-    //     this.filteredItem.classification === "specific"
-    //     ? this.filteredItem.product.length > 0
-    //     : true;
-    // },
+    checkClassificationvalidated() {
+      return this.filteredItem.classification === "specific"
+        ? this.filteredItem.products.length > 0
+        : true;
+    },
 
     validatedForm() {
       return (
         this.filteredItem.warehouse &&
         this.filteredItem.type &&
-        this.filteredItem.classification
+        this.filteredItem.classification &&
+        this.checkClassificationvalidated
       );
     },
   },
